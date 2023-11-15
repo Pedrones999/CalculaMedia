@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Media.Controle;
@@ -15,11 +16,17 @@ public class ControleMateria
         File.WriteAllText(Caminhos.MateriaDb, praSalvar);
     }
 
-    public List<Materia?> GetAllMaterias()
+    public Materia? GetMateria(List<Materia> materias, Guid id)
+    {
+        Materia? materia = materias.FirstOrDefault(m => m.Id == id);
+        return materia;
+    }
+
+    public List<Materia> GetAllMaterias()
     {
         string json = File.ReadAllText(Caminhos.MateriaDb);
         
-        var materias = JsonSerializer.Deserialize<List<Materia?>>(json);
+        var materias = JsonSerializer.Deserialize<List<Materia>>(json);
 
         return materias;
     }

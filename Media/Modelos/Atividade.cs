@@ -53,5 +53,10 @@ public class Atividade
         _nome = nome;
         _peso = peso;
     }
+
+    public override string ToString()
+    {
+        return Nome;
+    }
 }
 

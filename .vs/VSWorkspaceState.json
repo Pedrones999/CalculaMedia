@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Media",
+    "\\Media\\bin",
+    "\\Media\\bin\\Debug",
+    "\\Media\\bin\\Debug\\net7.0-windows",
+    "\\Media\\Modelos"
   ],
-  "SelectedNode": "\\Media.sln",
+  "SelectedNode": "\\Media\\bin\\Debug\\net7.0-windows\\Materias.json",
   "PreviewInSolutionExplorer": false
 }
