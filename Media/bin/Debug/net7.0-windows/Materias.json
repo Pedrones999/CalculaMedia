@@ -31,7 +31,13 @@
   },
   {
     "Nome": "Mat",
-    "Atvs": []
+    "Atvs": [
+      {
+        "Nome": "prova",
+        "Peso": 1,
+        "Nota": 0
+      }
+    ]
   },
   {
     "Nome": "Historia",

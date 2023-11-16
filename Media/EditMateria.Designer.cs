@@ -47,11 +47,12 @@
             // 
             // PainelMateria
             // 
+            PainelMateria.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             PainelMateria.BackColor = SystemColors.ControlDarkDark;
             PainelMateria.Controls.Add(label3);
             PainelMateria.Location = new Point(0, 3);
             PainelMateria.Name = "PainelMateria";
-            PainelMateria.Size = new Size(948, 75);
+            PainelMateria.Size = new Size(814, 83);
             PainelMateria.TabIndex = 0;
             // 
             // label3
@@ -72,22 +73,23 @@
             PainelLista.Dock = DockStyle.Fill;
             PainelLista.Location = new Point(0, 0);
             PainelLista.Name = "PainelLista";
-            PainelLista.Size = new Size(945, 489);
+            PainelLista.Size = new Size(811, 533);
             PainelLista.TabIndex = 0;
             // 
             // listBox1
             // 
+            listBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(3, 83);
+            listBox1.Location = new Point(3, 92);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(603, 394);
+            listBox1.Size = new Size(469, 424);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // PainelDadosAtv
             // 
-            PainelDadosAtv.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            PainelDadosAtv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             PainelDadosAtv.BackColor = SystemColors.AppWorkspace;
             PainelDadosAtv.Controls.Add(BtnNovaAtv);
             PainelDadosAtv.Controls.Add(label2);
@@ -96,16 +98,16 @@
             PainelDadosAtv.Controls.Add(BtnSalvaAtv);
             PainelDadosAtv.Controls.Add(Peso);
             PainelDadosAtv.Controls.Add(NomeAtv);
-            PainelDadosAtv.Location = new Point(612, 83);
+            PainelDadosAtv.Location = new Point(478, 83);
             PainelDadosAtv.Name = "PainelDadosAtv";
-            PainelDadosAtv.Size = new Size(333, 406);
+            PainelDadosAtv.Size = new Size(333, 450);
             PainelDadosAtv.TabIndex = 0;
             // 
             // BtnNovaAtv
             // 
             BtnNovaAtv.Anchor = AnchorStyles.None;
             BtnNovaAtv.BackColor = Color.FromArgb(128, 255, 255);
-            BtnNovaAtv.Location = new Point(15, 302);
+            BtnNovaAtv.Location = new Point(15, 324);
             BtnNovaAtv.Name = "BtnNovaAtv";
             BtnNovaAtv.Size = new Size(96, 40);
             BtnNovaAtv.TabIndex = 6;
@@ -137,7 +139,7 @@
             // 
             BtnApagaAtv.Anchor = AnchorStyles.None;
             BtnApagaAtv.BackColor = Color.FromArgb(255, 128, 128);
-            BtnApagaAtv.Location = new Point(241, 302);
+            BtnApagaAtv.Location = new Point(241, 324);
             BtnApagaAtv.Name = "BtnApagaAtv";
             BtnApagaAtv.Size = new Size(89, 40);
             BtnApagaAtv.TabIndex = 3;
@@ -149,7 +151,7 @@
             // 
             BtnSalvaAtv.Anchor = AnchorStyles.None;
             BtnSalvaAtv.BackColor = Color.FromArgb(128, 255, 128);
-            BtnSalvaAtv.Location = new Point(129, 302);
+            BtnSalvaAtv.Location = new Point(129, 324);
             BtnSalvaAtv.Name = "BtnSalvaAtv";
             BtnSalvaAtv.Size = new Size(89, 40);
             BtnSalvaAtv.TabIndex = 2;
@@ -177,7 +179,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(945, 489);
+            ClientSize = new Size(811, 533);
             Controls.Add(PainelDadosAtv);
             Controls.Add(PainelLista);
             Name = "EditMateria";

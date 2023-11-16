@@ -46,7 +46,7 @@
             // 
             // BtnNovaMateria
             // 
-            BtnNovaMateria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnNovaMateria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             BtnNovaMateria.BackColor = Color.Aquamarine;
             BtnNovaMateria.Location = new Point(423, 7);
             BtnNovaMateria.Name = "BtnNovaMateria";
@@ -71,7 +71,7 @@
             // 
             // BtnSalvar
             // 
-            BtnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             BtnSalvar.BackColor = Color.LightGreen;
             BtnSalvar.Location = new Point(596, 7);
             BtnSalvar.Name = "BtnSalvar";
@@ -83,7 +83,7 @@
             // 
             // BtnApagar
             // 
-            BtnApagar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnApagar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             BtnApagar.BackColor = Color.LightCoral;
             BtnApagar.Location = new Point(763, 7);
             BtnApagar.Name = "BtnApagar";
@@ -95,7 +95,7 @@
             // 
             // CaixaNomeMateria
             // 
-            CaixaNomeMateria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CaixaNomeMateria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             CaixaNomeMateria.Location = new Point(36, 14);
             CaixaNomeMateria.Name = "CaixaNomeMateria";
             CaixaNomeMateria.Size = new Size(360, 23);

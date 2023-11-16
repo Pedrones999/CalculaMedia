@@ -228,7 +228,7 @@ namespace Media
             }
             aluno.Materias.Remove(materia);
             ListaMaterias.DataSource = aluno.Materias;
-            
+
             todosAlunos[ListaAlunos.SelectedIndex] = aluno;
             ControleAluno.Salvar(todosAlunos);
 
@@ -243,11 +243,11 @@ namespace Media
         }
         private void BtnPreencher_Click(object sender, EventArgs e)
         {
-            if(ListaMaterias.Items.Count <= 0 || aluno == null || materia == null) 
+            if (ListaMaterias.Items.Count <= 0 || aluno == null || materia == null)
             {
                 return;
             }
-            
+
             var preenche = new PreencherNota(aluno.Nome, materia.Nome);
             DialogResult fim = preenche.ShowDialog();
             if (fim != DialogResult.None)

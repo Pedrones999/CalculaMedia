@@ -40,6 +40,7 @@
             ListaMaterias = new ListBox();
             ListaAlunos = new ListBox();
             panel2 = new Panel();
+            this.BtnGeraBoletim = new Button();
             BtnSalvar = new Button();
             BtnApagar = new Button();
             CaixaNome = new TextBox();
@@ -59,7 +60,7 @@
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1268, 605);
+            panel1.Size = new Size(1301, 649);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -85,7 +86,7 @@
             panel3.Controls.Add(ListaMaterias);
             panel3.Location = new Point(679, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(589, 557);
+            panel3.Size = new Size(622, 601);
             panel3.TabIndex = 4;
             // 
             // LinkMaterias
@@ -109,11 +110,10 @@
             // 
             // BtnPreencher
             // 
-            BtnPreencher.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             BtnPreencher.BackColor = Color.Khaki;
             BtnPreencher.Location = new Point(463, 46);
             BtnPreencher.Name = "BtnPreencher";
-            BtnPreencher.Size = new Size(114, 37);
+            BtnPreencher.Size = new Size(117, 34);
             BtnPreencher.TabIndex = 4;
             BtnPreencher.Text = "Preencher notas";
             BtnPreencher.UseVisualStyleBackColor = false;
@@ -121,11 +121,10 @@
             // 
             // BtnRemoverMateria
             // 
-            BtnRemoverMateria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             BtnRemoverMateria.BackColor = Color.LightCoral;
             BtnRemoverMateria.Location = new Point(345, 46);
             BtnRemoverMateria.Name = "BtnRemoverMateria";
-            BtnRemoverMateria.Size = new Size(112, 39);
+            BtnRemoverMateria.Size = new Size(113, 35);
             BtnRemoverMateria.TabIndex = 8;
             BtnRemoverMateria.Text = "Remover materia";
             BtnRemoverMateria.UseVisualStyleBackColor = false;
@@ -133,11 +132,10 @@
             // 
             // BtnAddMateria
             // 
-            BtnAddMateria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             BtnAddMateria.BackColor = Color.LightGreen;
             BtnAddMateria.Location = new Point(230, 46);
             BtnAddMateria.Name = "BtnAddMateria";
-            BtnAddMateria.Size = new Size(109, 37);
+            BtnAddMateria.Size = new Size(109, 35);
             BtnAddMateria.TabIndex = 7;
             BtnAddMateria.Text = "Adicionar materia";
             BtnAddMateria.UseVisualStyleBackColor = false;
@@ -155,44 +153,57 @@
             // 
             // ListaMaterias
             // 
+            ListaMaterias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ListaMaterias.FormattingEnabled = true;
             ListaMaterias.ItemHeight = 15;
-            ListaMaterias.Location = new Point(12, 87);
+            ListaMaterias.Location = new Point(13, 87);
             ListaMaterias.Name = "ListaMaterias";
-            ListaMaterias.Size = new Size(565, 454);
+            ListaMaterias.Size = new Size(598, 499);
             ListaMaterias.TabIndex = 0;
             ListaMaterias.SelectedIndexChanged += ListaMaterias_SelectedIndexChanged;
             // 
             // ListaAlunos
             // 
+            ListaAlunos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             ListaAlunos.FormattingEnabled = true;
             ListaAlunos.ItemHeight = 15;
             ListaAlunos.Location = new Point(12, 42);
             ListaAlunos.Name = "ListaAlunos";
-            ListaAlunos.Size = new Size(653, 499);
+            ListaAlunos.Size = new Size(650, 529);
             ListaAlunos.TabIndex = 3;
             ListaAlunos.SelectedIndexChanged += ListaAlunos_SelectedIndexChanged;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Gray;
+            panel2.Controls.Add(this.BtnGeraBoletim);
             panel2.Controls.Add(BtnSalvar);
             panel2.Controls.Add(BtnApagar);
             panel2.Controls.Add(CaixaNome);
             panel2.Controls.Add(BtnNovoAluno);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 556);
+            panel2.Location = new Point(0, 600);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1268, 49);
+            panel2.Size = new Size(1301, 49);
             panel2.TabIndex = 2;
+            // 
+            // BtnGeraBoletim
+            // 
+            this.BtnGeraBoletim.BackColor = Color.Khaki;
+            this.BtnGeraBoletim.Location = new Point(1125, 5);
+            this.BtnGeraBoletim.Name = "BtnGeraBoletim";
+            this.BtnGeraBoletim.Size = new Size(117, 39);
+            this.BtnGeraBoletim.TabIndex = 5;
+            this.BtnGeraBoletim.Text = "Gerar boletim";
+            this.BtnGeraBoletim.UseVisualStyleBackColor = false;
             // 
             // BtnSalvar
             // 
-            BtnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnSalvar.Anchor = AnchorStyles.Left;
             BtnSalvar.BackColor = Color.LightGreen;
-            BtnSalvar.Location = new Point(784, 6);
+            BtnSalvar.Location = new Point(856, 5);
             BtnSalvar.Name = "BtnSalvar";
-            BtnSalvar.Size = new Size(137, 37);
+            BtnSalvar.Size = new Size(104, 37);
             BtnSalvar.TabIndex = 3;
             BtnSalvar.Text = "Salvar nome";
             BtnSalvar.UseVisualStyleBackColor = false;
@@ -200,11 +211,11 @@
             // 
             // BtnApagar
             // 
-            BtnApagar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnApagar.Anchor = AnchorStyles.Left;
             BtnApagar.BackColor = Color.LightCoral;
-            BtnApagar.Location = new Point(948, 5);
+            BtnApagar.Location = new Point(995, 5);
             BtnApagar.Name = "BtnApagar";
-            BtnApagar.Size = new Size(130, 39);
+            BtnApagar.Size = new Size(97, 39);
             BtnApagar.TabIndex = 2;
             BtnApagar.Text = "Apagar aluno";
             BtnApagar.UseVisualStyleBackColor = false;
@@ -212,20 +223,20 @@
             // 
             // CaixaNome
             // 
-            CaixaNome.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            CaixaNome.Location = new Point(36, 14);
+            CaixaNome.Anchor = AnchorStyles.Left;
+            CaixaNome.Location = new Point(11, 14);
             CaixaNome.Name = "CaixaNome";
-            CaixaNome.Size = new Size(537, 23);
+            CaixaNome.Size = new Size(554, 23);
             CaixaNome.TabIndex = 1;
             CaixaNome.TextAlign = HorizontalAlignment.Center;
             // 
             // BtnNovoAluno
             // 
-            BtnNovoAluno.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnNovoAluno.Anchor = AnchorStyles.Left;
             BtnNovoAluno.BackColor = Color.Aquamarine;
-            BtnNovoAluno.Location = new Point(623, 6);
+            BtnNovoAluno.Location = new Point(725, 5);
             BtnNovoAluno.Name = "BtnNovoAluno";
-            BtnNovoAluno.Size = new Size(132, 37);
+            BtnNovoAluno.Size = new Size(99, 37);
             BtnNovoAluno.TabIndex = 0;
             BtnNovoAluno.Text = "Novo aluno";
             BtnNovoAluno.UseVisualStyleBackColor = false;
@@ -236,7 +247,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(1268, 607);
+            ClientSize = new Size(1301, 651);
             Controls.Add(panel1);
             Name = "TabelaAluno";
             Text = "Form1";
@@ -268,5 +279,6 @@
         private Button BtnPreencher;
         private TextBox NomeMateria;
         private LinkLabel LinkMaterias;
+        private Button BtnGeraBoletim;
     }
 }

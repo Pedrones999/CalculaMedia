@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label1 = new Label();
             NomeAtv = new Label();
             BtnSalva = new Button();
             CaixaNota = new TextBox();
             panel2 = new Panel();
             ListaAtvs = new ListBox();
-            label1 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -47,10 +47,19 @@
             panel1.Controls.Add(BtnSalva);
             panel1.Controls.Add(CaixaNota);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(443, 0);
+            panel1.Location = new Point(481, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(222, 415);
+            panel1.Size = new Size(222, 431);
             panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(32, 137);
+            label1.Name = "label1";
+            label1.Size = new Size(36, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Nota:";
             // 
             // NomeAtv
             // 
@@ -86,33 +95,25 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(443, 415);
+            panel2.Size = new Size(481, 431);
             panel2.TabIndex = 1;
             // 
             // ListaAtvs
             // 
+            ListaAtvs.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ListaAtvs.FormattingEnabled = true;
             ListaAtvs.ItemHeight = 15;
             ListaAtvs.Location = new Point(12, 12);
             ListaAtvs.Name = "ListaAtvs";
-            ListaAtvs.Size = new Size(415, 394);
+            ListaAtvs.Size = new Size(453, 394);
             ListaAtvs.TabIndex = 2;
             ListaAtvs.SelectedIndexChanged += trocaIndex;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 137);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 3;
-            label1.Text = "label1";
             // 
             // PreencherNota
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(665, 415);
+            ClientSize = new Size(703, 431);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "PreencherNota";

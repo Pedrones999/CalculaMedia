@@ -29,5 +29,15 @@ public static class ControleMateria
         return materias;
     }
 
+    public static string tratamentoDouble(string doubleSemTratar)
+    {
+        if (doubleSemTratar.Contains('.'))
+        {
+            string doubleTratado = doubleSemTratar.Replace('.', ',');
+            return doubleTratado;
+        }
+        return doubleSemTratar;
+    }
+
 }
 

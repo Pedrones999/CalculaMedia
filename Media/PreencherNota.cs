@@ -52,7 +52,8 @@ namespace Media
         {
             if (VerificaNota())
             {
-                atv.Nota = double.Parse(CaixaNota.Text);
+                string nota = ControleMateria.tratamentoDouble(CaixaNota.Text);
+                atv.Nota = double.Parse(nota);
 
                 var todosAlunos = ControleAluno.GetAllAlunos();
                 Aluno alunoReal = todosAlunos.Where(a => a.Nome == aluno.Nome).FirstOrDefault();

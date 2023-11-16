@@ -33,7 +33,7 @@ public partial class EditMateria : Form
             return false;
         }
         return true;
-        
+
     }
 
     private void AoCarregar(object sender, EventArgs e)
@@ -100,7 +100,9 @@ public partial class EditMateria : Form
             var atv = _todasAtvs[listBox1.SelectedIndex];
 
             atv.Nome = NomeAtv.Text;
-            atv.Peso = double.Parse(Peso.Text);
+
+            string peso = ControleMateria.tratamentoDouble(Peso.Text);
+            atv.Peso = double.Parse(peso);
 
             ControleMateria.Salvar(TodasMaterias);
             listBox1.DataSource = materia.Atvs;
