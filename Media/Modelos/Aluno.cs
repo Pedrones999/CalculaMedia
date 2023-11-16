@@ -9,7 +9,6 @@ namespace Media.Modelos
     public class Aluno
     {
         private string _nome;
-        public List<Materia> Materias { get; set; }
 
         public string Nome
         {
@@ -26,6 +25,8 @@ namespace Media.Modelos
                 }
             }
         }
+        public List<Materia> Materias { get; set; }
+        
         public Aluno(string nome)
         {
             Nome = nome;

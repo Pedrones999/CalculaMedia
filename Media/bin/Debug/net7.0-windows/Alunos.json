@@ -1,1 +1,107 @@
-[]
+[
+  {
+    "Nome": "Ana",
+    "Materias": [
+      {
+        "Nome": "Portugues",
+        "Atvs": [
+          {
+            "Nome": "Prova",
+            "Peso": 3,
+            "Nota": 1
+          },
+          {
+            "Nome": "nada",
+            "Peso": 3,
+            "Nota": 0
+          }
+        ]
+      },
+      {
+        "Nome": "Geografias",
+        "Atvs": [
+          {
+            "Nome": "prova",
+            "Peso": 1,
+            "Nota": 0
+          },
+          {
+            "Nome": "trabalho",
+            "Peso": 2,
+            "Nota": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Nome": "Pedro",
+    "Materias": [
+      {
+        "Nome": "Portugues",
+        "Atvs": [
+          {
+            "Nome": "Prova",
+            "Peso": 3,
+            "Nota": 0
+          },
+          {
+            "Nome": "nada",
+            "Peso": 3,
+            "Nota": 0
+          }
+        ]
+      },
+      {
+        "Nome": "Geografias",
+        "Atvs": [
+          {
+            "Nome": "prova",
+            "Peso": 1,
+            "Nota": 0
+          },
+          {
+            "Nome": "trabalho",
+            "Peso": 2,
+            "Nota": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Nome": "Jo\u00E3o",
+    "Materias": [
+      {
+        "Nome": "Portugues",
+        "Atvs": [
+          {
+            "Nome": "Prova",
+            "Peso": 3,
+            "Nota": 9
+          },
+          {
+            "Nome": "nada",
+            "Peso": 3,
+            "Nota": 0
+          }
+        ]
+      },
+      {
+        "Nome": "Geografias",
+        "Atvs": [
+          {
+            "Nome": "prova",
+            "Peso": 1,
+            "Nota": 0
+          },
+          {
+            "Nome": "trabalho",
+            "Peso": 2,
+            "Nota": 10
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -4,6 +4,9 @@
     <Compile Update="EditMateria.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PreencherNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TabelaAluno.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -192,6 +192,10 @@ namespace Media
             int MatIndex = ListaMaterias.SelectedIndex;
             materia = aluno.Materias[MatIndex];
             NomeMateria.Text = materia.Nome;
+            if (MatIndex == -1)
+            {
+                NomeMateria.Text = "";
+            }
         }
 
         private void LinkMaterias_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -213,14 +217,53 @@ namespace Media
             }
         }
 
-        private void BtnPreencher_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnRemoverMateria_Click(object sender, EventArgs e)
         {
+            var todosAlunos = ControleAluno.GetAllAlunos();
+            int alunoIndex;
+
+            if (aluno == null || ListaAlunos.SelectedIndex < 0 || materia == null)
+            {
+                return;
+            }
+            aluno.Materias.Remove(materia);
+            ListaMaterias.DataSource = aluno.Materias;
             
+            todosAlunos[ListaAlunos.SelectedIndex] = aluno;
+            ControleAluno.Salvar(todosAlunos);
+
+            alunoIndex = ListaAlunos.SelectedIndex;
+            aluno = ControleAluno.GetAllAlunos()[alunoIndex];
+            ListaMaterias.DataSource = aluno.Materias;
+
+            if (ListaMaterias.SelectedIndex == -1)
+            {
+                NomeMateria.Text = "";
+            }
         }
+        private void BtnPreencher_Click(object sender, EventArgs e)
+        {
+            if(ListaMaterias.Items.Count <= 0 || aluno == null || materia == null) 
+            {
+                return;
+            }
+            
+            var preenche = new PreencherNota(aluno.Nome, materia.Nome);
+            DialogResult fim = preenche.ShowDialog();
+            if (fim != DialogResult.None)
+            {
+                atualizaSugestao();
+                if (ControleAluno.GetAllAlunos().Count > 0)
+                {
+                    int alunoIndex = ListaAlunos.SelectedIndex;
+                    if (ControleAluno.GetAllAlunos().Count >= alunoIndex && alunoIndex >= 0)
+                    {
+                        aluno = ControleAluno.GetAllAlunos()[alunoIndex];
+                    }
+                    ListaMaterias.DataSource = aluno.Materias;
+                }
+            }
+        }
+
     }
 }
