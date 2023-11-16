@@ -9,6 +9,6 @@ namespace Media.Controle
     public static class Caminhos
     {
         public static string MateriaDb = "Materias.json";
-        public static string AlunoDb = "Media\\Media\\Controle\\Alunos.json";
+        public static string AlunoDb = "Alunos.json";
     }
 }

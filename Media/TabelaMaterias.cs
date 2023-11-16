@@ -4,19 +4,16 @@ namespace Media;
 
 public partial class TabelaMaterias : Form
 {
-    private ControleMateria _controleMateria = new();
-
-
     public TabelaMaterias()
     {
         InitializeComponent();
-        var todasMaterias = _controleMateria.GetAllMaterias();
+        var todasMaterias = ControleMateria.GetAllMaterias();
     }
 
     private void NovaMateria(object sender, EventArgs e)
     {
         string nome = CaixaNomeMateria.Text;
-        var TodasMaterias = _controleMateria.GetAllMaterias();
+        var TodasMaterias = ControleMateria.GetAllMaterias();
         Materia? nomeRepetido = TodasMaterias.Where(m => m.Nome == nome).FirstOrDefault();
 
         if (String.IsNullOrEmpty(nome) || nomeRepetido != null)
@@ -29,21 +26,21 @@ public partial class TabelaMaterias : Form
         Materia materia = new(nome);
 
         TodasMaterias.Add(materia);
-        _controleMateria.Salvar(TodasMaterias);
+        ControleMateria.Salvar(TodasMaterias);
         ListaMaterias.DataSource = TodasMaterias;
 
     }
 
     private void TabelaMaterias_Load(object sender, EventArgs e)
     {
-        var TodasMaterias = _controleMateria.GetAllMaterias();
+        var TodasMaterias = ControleMateria.GetAllMaterias();
         ListaMaterias.DataSource = TodasMaterias;
 
     }
 
     private void ListaMaterias_MouseDoubleClick(object sender, MouseEventArgs e)
     {
-        var TodasMaterias = _controleMateria.GetAllMaterias();
+        var TodasMaterias = ControleMateria.GetAllMaterias();
 
         int IndexMat = ListaMaterias.SelectedIndex;
 
@@ -52,14 +49,14 @@ public partial class TabelaMaterias : Form
         if (materia.GetType() == typeof(Materia))
         {
             var edicao = new EditMateria(materia);
-            _controleMateria.Salvar(TodasMaterias);
+            ControleMateria.Salvar(TodasMaterias);
             edicao.ShowDialog();
         }
     }
 
     private void BtnApagar_Click(object sender, EventArgs e)
     {
-        var TodasMaterias = _controleMateria.GetAllMaterias();
+        var TodasMaterias = ControleMateria.GetAllMaterias();
 
         if (TodasMaterias.Count > 0)
         {
@@ -67,7 +64,7 @@ public partial class TabelaMaterias : Form
 
             TodasMaterias.RemoveAt(IndexMat);
 
-            _controleMateria.Salvar(TodasMaterias);
+            ControleMateria.Salvar(TodasMaterias);
 
             ListaMaterias.DataSource = TodasMaterias;
         }
@@ -76,7 +73,8 @@ public partial class TabelaMaterias : Form
 
     private void BtnSalvar_Click(object sender, EventArgs e)
     {
-        var TodasMaterias = _controleMateria.GetAllMaterias();
+        var TodasMaterias = ControleMateria.GetAllMaterias();
+        var todosAlunos = ControleAluno.GetAllAlunos();
 
         if (TodasMaterias.Count > 0)
         {
@@ -84,9 +82,21 @@ public partial class TabelaMaterias : Form
 
             Materia materia = TodasMaterias[IndexMat];
 
+            foreach (Aluno aluno in todosAlunos)
+            {
+                foreach (Materia mt in aluno.Materias)
+                {
+                    if (mt.Nome == materia.Nome)
+                    {
+                        mt.Nome = CaixaNomeMateria.Text;
+                    }
+                }
+            }
+
             materia.Nome = CaixaNomeMateria.Text;
 
-            _controleMateria.Salvar(TodasMaterias);
+            ControleMateria.Salvar(TodasMaterias);
+            ControleAluno.Salvar(todosAlunos);
 
             ListaMaterias.DataSource = TodasMaterias;
         }
@@ -95,7 +105,7 @@ public partial class TabelaMaterias : Form
 
     private void ListaMaterias_SelectedIndexChanged(object sender, EventArgs e)
     {
-        CaixaNomeMateria.Text = ListaMaterias.SelectedItem.ToString();
+        CaixaNomeMateria.Text = ListaMaterias.SelectedValue.ToString();
     }
 }
 

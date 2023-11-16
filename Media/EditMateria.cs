@@ -16,7 +16,6 @@ public partial class EditMateria : Form
 {
     private Materia _materia;
     private List<Atividade> _todasAtvs;
-    private ControleMateria _controleMateria = new();
 
     public EditMateria(Materia materia)
     {
@@ -56,7 +55,7 @@ public partial class EditMateria : Form
 
     private void ClickNovaAtv(object sender, EventArgs e)
     {
-        var TodasMaterias = _controleMateria.GetAllMaterias();
+        var TodasMaterias = ControleMateria.GetAllMaterias();
         string? nome = NomeAtv.Text;
         double peso;
         _todasAtvs = _materia.Atvs;
@@ -83,7 +82,7 @@ public partial class EditMateria : Form
         Materia materia = TodasMaterias.Where(m => m.Nome == _materia.Nome).FirstOrDefault();
         materia.Atvs.Add(Atv);
         _materia.Atvs.Add(Atv);
-        _controleMateria.Salvar(TodasMaterias);
+        ControleMateria.Salvar(TodasMaterias);
 
         listBox1.DataSource = materia.Atvs;
         listBox1.SelectedItem = Atv;
@@ -93,7 +92,7 @@ public partial class EditMateria : Form
     {
         if (listBox1.Items.Count != 0 && VerificaPeso())
         {
-            var TodasMaterias = _controleMateria.GetAllMaterias();
+            var TodasMaterias = ControleMateria.GetAllMaterias();
             var materia = TodasMaterias.Where(m => m.Nome == _materia.Nome).FirstOrDefault();
 
             _todasAtvs = materia.Atvs;
@@ -103,7 +102,7 @@ public partial class EditMateria : Form
             atv.Nome = NomeAtv.Text;
             atv.Peso = double.Parse(Peso.Text);
 
-            _controleMateria.Salvar(TodasMaterias);
+            ControleMateria.Salvar(TodasMaterias);
             listBox1.DataSource = materia.Atvs;
             _materia.Atvs = materia.Atvs;
         }
@@ -123,12 +122,12 @@ public partial class EditMateria : Form
     {
         if (listBox1.Items.Count != 0)
         {
-            var TodasMaterias = _controleMateria.GetAllMaterias();
+            var TodasMaterias = ControleMateria.GetAllMaterias();
             var materia = TodasMaterias.Where(m => m.Nome == _materia.Nome).FirstOrDefault();
             int atvIndex = listBox1.SelectedIndex;
 
             materia.Atvs.RemoveAt(atvIndex);
-            _controleMateria.Salvar(TodasMaterias);
+            ControleMateria.Salvar(TodasMaterias);
             listBox1.DataSource = materia.Atvs;
             _materia.Atvs = materia.Atvs;
         }

@@ -4,6 +4,7 @@ C:\Users\pedro\Codigos\Media\Media\bin\Debug\net7.0-windows\Media.runtimeconfig.
 C:\Users\pedro\Codigos\Media\Media\bin\Debug\net7.0-windows\Media.dll
 C:\Users\pedro\Codigos\Media\Media\bin\Debug\net7.0-windows\Media.pdb
 C:\Users\pedro\Codigos\Media\Media\obj\Debug\net7.0-windows\Media.EditMateria.resources
+C:\Users\pedro\Codigos\Media\Media\obj\Debug\net7.0-windows\Media.TabelaAluno.resources
 C:\Users\pedro\Codigos\Media\Media\obj\Debug\net7.0-windows\Media.TabelaMaterias.resources
 C:\Users\pedro\Codigos\Media\Media\obj\Debug\net7.0-windows\Media.csproj.GenerateResource.cache
 C:\Users\pedro\Codigos\Media\Media\obj\Debug\net7.0-windows\Media.GeneratedMSBuildEditorConfig.editorconfig

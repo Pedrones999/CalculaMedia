@@ -8,14 +8,9 @@ namespace Media.Modelos;
 
 public class Atividade
 {
-    private Guid _id;
     private string _nome;
     private double _peso;
-
-    public Guid Id
-    {
-        get { return _id; } 
-    }
+    private double _nota;
 
     public string Nome
     {
@@ -47,9 +42,23 @@ public class Atividade
             }
         }
     }
+    public double Nota
+    {
+        get { return _nota; }
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException("O peso da atividade deve ser igual ou maior que 0");
+            }
+            else
+            {
+                _nota = value;
+            }
+        }
+    }
     public Atividade(string nome, double peso)
     {
-        _id = Guid.NewGuid();
         _nome = nome;
         _peso = peso;
     }

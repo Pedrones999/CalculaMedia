@@ -8,14 +8,9 @@ namespace Media.Modelos
 {
     public class Aluno
     {
-        private Guid _id;
         private string _nome;
-        public List<Materia> Materias;
+        public List<Materia> Materias { get; set; }
 
-        public Guid Id
-        {
-            get { return _id; }
-        }
         public string Nome
         {
             get { return _nome; }
@@ -34,9 +29,12 @@ namespace Media.Modelos
         public Aluno(string nome)
         {
             Nome = nome;
-
-            _id = Guid.NewGuid();
             Materias = new List<Materia>();
+        }
+
+        public override string ToString() 
+        {
+            return Nome;
         }
     }
 }

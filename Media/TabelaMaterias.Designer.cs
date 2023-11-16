@@ -100,7 +100,6 @@
             CaixaNomeMateria.Name = "CaixaNomeMateria";
             CaixaNomeMateria.Size = new Size(360, 23);
             CaixaNomeMateria.TabIndex = 1;
-            CaixaNomeMateria.Text = "Nome para nova materia";
             CaixaNomeMateria.TextAlign = HorizontalAlignment.Center;
             // 
             // panel2

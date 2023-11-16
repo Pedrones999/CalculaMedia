@@ -8,30 +8,27 @@ using System.Threading.Tasks;
 
 namespace Media.Controle
 {
-    internal class ControleAluno
+    public static class ControleAluno
     {
-        public List<Aluno> todosAlunos;
-
-        public void Salvar()
+        public static void Salvar(List<Aluno> alunos)
         {
-            string praSalvar = JsonSerializer.Serialize(todosAlunos);
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string praSalvar = JsonSerializer.Serialize(alunos, options);
             File.WriteAllText(Caminhos.AlunoDb, praSalvar);
         }
 
-        public void Apagar(Aluno aluno)
-        {
-            todosAlunos.Remove(aluno);
-        }
-
-        public void Add(Aluno aluno)
-        {
-            todosAlunos.Append(aluno);
-        }
-
-        public ControleAluno()
+        public static List<Aluno> GetAllAlunos()
         {
             string json = File.ReadAllText(Caminhos.AlunoDb);
-            todosAlunos = JsonSerializer.Deserialize<List<Aluno>>(json) ?? new();
+
+            var alunos = JsonSerializer.Deserialize<List<Aluno>>(json);
+
+            if (alunos == null)
+            {
+                alunos = new List<Aluno>();
+            }
+
+            return alunos;
         }
     }
 }
