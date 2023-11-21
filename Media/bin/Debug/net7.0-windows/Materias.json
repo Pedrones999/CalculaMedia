@@ -1,36 +1,6 @@
 [
   {
-    "Nome": "Geografias",
-    "Atvs": [
-      {
-        "Nome": "prova",
-        "Peso": 1,
-        "Nota": 0
-      },
-      {
-        "Nome": "trabalho",
-        "Peso": 2,
-        "Nota": 0
-      }
-    ]
-  },
-  {
-    "Nome": "Portugues",
-    "Atvs": [
-      {
-        "Nome": "Prova",
-        "Peso": 3,
-        "Nota": 0
-      },
-      {
-        "Nome": "nada",
-        "Peso": 3,
-        "Nota": 0
-      }
-    ]
-  },
-  {
-    "Nome": "Mat",
+    "Nome": "portugues",
     "Atvs": [
       {
         "Nome": "prova",
@@ -40,7 +10,13 @@
     ]
   },
   {
-    "Nome": "Historia",
-    "Atvs": []
+    "Nome": "geografia",
+    "Atvs": [
+      {
+        "Nome": "prova",
+        "Peso": 1,
+        "Nota": 0
+      }
+    ]
   }
 ]

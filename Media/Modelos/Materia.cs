@@ -33,4 +33,44 @@ public class Materia
         return Nome;
     }
 
+	public double CalculaMedia()
+	{
+		double total = 0;
+		double totalPeso = 0;
+        foreach (var atividade in Atvs)
+		{
+			total = total + atividade.Nota * atividade.Peso;
+			totalPeso += atividade.Peso;
+		}
+
+		double media = total / totalPeso;
+
+		return media;
+	}
+
+	public string NotaPraLetra(double media) 
+	{
+		if (media < 3.1) 
+		{
+			return "E";
+		}
+		
+		if (media < 5.0) 
+		{
+			return "D";
+		}
+		if (media < 7.0) 
+		{
+			return "C";
+		}
+		if (media < 9.0) 
+		{
+			return "B";
+		}
+		else 
+		{
+			return "A";
+		}
+		
+	}
 }

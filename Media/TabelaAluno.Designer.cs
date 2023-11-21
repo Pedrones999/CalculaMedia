@@ -32,7 +32,6 @@
             label1 = new Label();
             panel3 = new Panel();
             LinkMaterias = new LinkLabel();
-            NomeMateria = new TextBox();
             BtnPreencher = new Button();
             BtnRemoverMateria = new Button();
             BtnAddMateria = new Button();
@@ -40,11 +39,12 @@
             ListaMaterias = new ListBox();
             ListaAlunos = new ListBox();
             panel2 = new Panel();
-            this.BtnGeraBoletim = new Button();
+            BtnGeraBoletim = new Button();
             BtnSalvar = new Button();
             BtnApagar = new Button();
             CaixaNome = new TextBox();
             BtnNovoAluno = new Button();
+            NomeMateria = new ComboBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -77,8 +77,8 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = SystemColors.ScrollBar;
-            panel3.Controls.Add(LinkMaterias);
             panel3.Controls.Add(NomeMateria);
+            panel3.Controls.Add(LinkMaterias);
             panel3.Controls.Add(BtnPreencher);
             panel3.Controls.Add(BtnRemoverMateria);
             panel3.Controls.Add(BtnAddMateria);
@@ -99,14 +99,6 @@
             LinkMaterias.TabStop = true;
             LinkMaterias.Text = "Editar materias";
             LinkMaterias.LinkClicked += LinkMaterias_LinkClicked;
-            // 
-            // NomeMateria
-            // 
-            NomeMateria.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            NomeMateria.Location = new Point(15, 54);
-            NomeMateria.Name = "NomeMateria";
-            NomeMateria.Size = new Size(184, 23);
-            NomeMateria.TabIndex = 9;
             // 
             // BtnPreencher
             // 
@@ -176,7 +168,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Gray;
-            panel2.Controls.Add(this.BtnGeraBoletim);
+            panel2.Controls.Add(BtnGeraBoletim);
             panel2.Controls.Add(BtnSalvar);
             panel2.Controls.Add(BtnApagar);
             panel2.Controls.Add(CaixaNome);
@@ -189,13 +181,14 @@
             // 
             // BtnGeraBoletim
             // 
-            this.BtnGeraBoletim.BackColor = Color.Khaki;
-            this.BtnGeraBoletim.Location = new Point(1125, 5);
-            this.BtnGeraBoletim.Name = "BtnGeraBoletim";
-            this.BtnGeraBoletim.Size = new Size(117, 39);
-            this.BtnGeraBoletim.TabIndex = 5;
-            this.BtnGeraBoletim.Text = "Gerar boletim";
-            this.BtnGeraBoletim.UseVisualStyleBackColor = false;
+            BtnGeraBoletim.BackColor = Color.Khaki;
+            BtnGeraBoletim.Location = new Point(1125, 5);
+            BtnGeraBoletim.Name = "BtnGeraBoletim";
+            BtnGeraBoletim.Size = new Size(117, 39);
+            BtnGeraBoletim.TabIndex = 5;
+            BtnGeraBoletim.Text = "Gerar boletim";
+            BtnGeraBoletim.UseVisualStyleBackColor = false;
+            BtnGeraBoletim.Click += BtnGeraBoletim_Click;
             // 
             // BtnSalvar
             // 
@@ -242,6 +235,14 @@
             BtnNovoAluno.UseVisualStyleBackColor = false;
             BtnNovoAluno.Click += BtnNovoAluno_Click;
             // 
+            // NomeMateria
+            // 
+            NomeMateria.FormattingEnabled = true;
+            NomeMateria.Location = new Point(13, 53);
+            NomeMateria.Name = "NomeMateria";
+            NomeMateria.Size = new Size(202, 23);
+            NomeMateria.TabIndex = 11;
+            // 
             // TabelaAluno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -250,7 +251,7 @@
             ClientSize = new Size(1301, 651);
             Controls.Add(panel1);
             Name = "TabelaAluno";
-            Text = "Form1";
+            Text = "Tabela de alunos";
             Load += TabelaAluno_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -277,8 +278,8 @@
         private Button BtnRemoverMateria;
         private Button BtnAddMateria;
         private Button BtnPreencher;
-        private TextBox NomeMateria;
         private LinkLabel LinkMaterias;
         private Button BtnGeraBoletim;
+        private ComboBox NomeMateria;
     }
 }

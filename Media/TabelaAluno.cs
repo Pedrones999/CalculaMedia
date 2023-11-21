@@ -33,8 +33,7 @@ namespace Media
             {
                 materias.Add(mt.ToString());
             }
-            NomeMateria.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            NomeMateria.AutoCompleteCustomSource = materias;
+            NomeMateria.DataSource = materias;
         }
 
         private void TabelaAluno_Load(object sender, EventArgs e)
@@ -120,6 +119,7 @@ namespace Media
 
                 if (IndexAluno > -1)
                 {
+                    aluno = null;
                     todosAlunos.RemoveAt(IndexAluno);
                 }
 
@@ -139,6 +139,10 @@ namespace Media
                     if (aluno != null)
                     {
                         ListaMaterias.DataSource = aluno.Materias;
+                    }
+                    else
+                    {
+                        ListaMaterias.DataSource = null;
                     }
                 }
             }
@@ -188,14 +192,17 @@ namespace Media
 
         private void ListaMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            int MatIndex = ListaMaterias.SelectedIndex;
-            materia = aluno.Materias[MatIndex];
-            NomeMateria.Text = materia.Nome;
-            if (MatIndex == -1)
+            if (aluno != null)
             {
-                NomeMateria.Text = "";
+                int MatIndex = ListaMaterias.SelectedIndex;
+                materia = aluno.Materias[MatIndex];
+                NomeMateria.Text = materia.Nome;
+                if (MatIndex == -1)
+                {
+                    NomeMateria.Text = "";
+                }
             }
+
         }
 
         private void LinkMaterias_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -265,5 +272,14 @@ namespace Media
             }
         }
 
+        private void BtnGeraBoletim_Click(object sender, EventArgs e)
+        {
+            if (aluno != null && aluno.Materias.Count > 0)
+            {
+                var novoBoletim = new ConfigBoletim(aluno);
+                novoBoletim.ShowDialog();
+            }
+            return;
+        }
     }
 }

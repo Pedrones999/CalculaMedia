@@ -166,6 +166,7 @@
             Peso.Name = "Peso";
             Peso.Size = new Size(43, 23);
             Peso.TabIndex = 1;
+            Peso.Text = "1";
             // 
             // NomeAtv
             // 

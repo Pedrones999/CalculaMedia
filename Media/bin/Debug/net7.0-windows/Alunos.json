@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "Nome": "pedro",
+    "Materias": [
+      {
+        "Nome": "portugues",
+        "Atvs": [
+          {
+            "Nome": "prova",
+            "Peso": 1,
+            "Nota": 0
+          }
+        ]
+      }
+    ]
+  }
+]
