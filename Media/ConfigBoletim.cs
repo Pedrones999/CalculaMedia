@@ -91,26 +91,16 @@ namespace Media
         {
             if (checkNum.Checked)
             {
-                notaLetra = false;
                 checkLetra.Checked = false;
-            }
-
-            if (!checkNum.Checked)
-            {
-                checkLetra.Checked = true;
+                notaLetra = true;
             }
         }
         private void checkLetra_CheckedChanged(object sender, EventArgs e)
         {
             if (checkLetra.Checked)
             {
-                notaLetra = true;
                 checkNum.Checked = false;
-            }
-
-            if (!checkLetra.Checked)
-            {
-                checkNum.Checked = false;
+                notaLetra = false;
             }
         }
 

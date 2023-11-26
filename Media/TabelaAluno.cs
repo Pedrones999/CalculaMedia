@@ -119,8 +119,13 @@ namespace Media
 
                 if (IndexAluno > -1)
                 {
-                    aluno = null;
-                    todosAlunos.RemoveAt(IndexAluno);
+                    DialogResult ctza = MessageBox.Show($"Quer mesmo excluir {todosAlunos[IndexAluno]}", "tem certeza?", MessageBoxButtons.OKCancel);
+                    
+                    if(ctza == DialogResult.OK)
+                    {
+                        aluno = null;
+                        todosAlunos.RemoveAt(IndexAluno);
+                    }
                 }
 
                 ControleAluno.Salvar(todosAlunos);
